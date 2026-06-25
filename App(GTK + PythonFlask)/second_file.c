@@ -1,7 +1,7 @@
 #include <gtk/gtk.h>
 #include "second_file.h"
 
-void about_window() {
+void window_about() {
   
   GtkWidget *window2 = gtk_new_window(GTK_TOPLEVEL);
   gtk_window_set_default_size(GTK_WINDOW(window2), 800, 600);
