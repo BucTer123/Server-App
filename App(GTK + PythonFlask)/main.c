@@ -1,6 +1,7 @@
 #include <gtk/gkt.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "second_file.h"
 
 void start_webserver_python() {
     printf("Starting...");
@@ -26,6 +27,10 @@ void btn2_callback() {
     exit(0);
 }
 
+void btn3_callback() {
+    window_about();
+}
+
 int main(int argc, char** argv) {
     gtk_init(argc, argv);
 
@@ -45,6 +50,10 @@ int main(int argc, char** argv) {
     GtkWidget *btn2 = gtk_new_button_with_label("Exit");
     g_container_add(GTK_CONTAINER(window), btn2);
 
+    GtkWidget *btn3 = gtk_new_button_with_label("About");
+    g_container_add(GTK_CONTAINER(window), btn3);
+
     g_signal_connect(btn1, "clicked", G_CALLBACK(btn1_callback));
     g_signal_connect(btn2, "clicked", G_CALLBACK(btn2_callback));
+    g_signal_connect(btn3, "clicked", G_CALLBACK(btn3_callback));
 }
