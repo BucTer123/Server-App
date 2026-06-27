@@ -20,6 +20,9 @@ void btn1_callback() {
     g_container_add(GTK_CONTAINER(window), btn3);
 
     g_signal_connect(btn3, "clicked", G_CALLBACK(start_webserver_python))
+
+    gtk_widget_show_all(window2);
+    gtk_main();
 }
 
 void btn2_callback() {
@@ -32,7 +35,7 @@ void btn3_callback() {
 }
 
 int main(int argc, char** argv) {
-    gtk_init(argc, argv);
+    gtk_init(&argc, &argv);
 
     GtkWidget *window = gtk_new_window(GTK_TOPLEVEL);
     gtk_new_window_set_default_size(GTK_WINDOW(window), 800, 600);
@@ -56,4 +59,9 @@ int main(int argc, char** argv) {
     g_signal_connect(btn1, "clicked", G_CALLBACK(btn1_callback));
     g_signal_connect(btn2, "clicked", G_CALLBACK(btn2_callback));
     g_signal_connect(btn3, "clicked", G_CALLBACK(btn3_callback));
+
+    gtk_widget_show_all(window);
+    gtk_main();
+
+    return 0;
 }
