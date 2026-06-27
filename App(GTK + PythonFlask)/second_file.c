@@ -10,5 +10,8 @@ void window_about() {
   GtkWidget *text_about = gtk_new_label("This window is empty ");
   g_container_add(GTK_CONTAINER(window2), text_about);
 
+  gtk_widget_show_all(window2);
+  gtk_main();
+
   return 0;
 }
